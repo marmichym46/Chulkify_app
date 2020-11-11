@@ -8,7 +8,15 @@ class inicio extends StatelessWidget {
         title: Text('Pagina Inicio'),
       ),
       body: new Column(
-        children: <Widget>[new Text('estamos en el menu inicio principal')],
+        children: <Widget>[
+          Text('estamos en el menu inicio principal'),
+          RaisedButton(
+            child: Text("salir"),
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, '/LoginPage');
+            },
+          )
+        ],
       ),
     );
   }

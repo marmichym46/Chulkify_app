@@ -37,13 +37,14 @@ class _LoginPageState extends State<LoginPage> {
 
   Future<List> login() async {
     final response =
-        await http.post("http://142.93.190.70/chulki/login.php", body: {
+        await http.post("https://www.marlonmym.tk/chulki/login.php", body: {
       "usuario_us": controllerUser.text,
-      "contraseña_us": controllerPass.text,
+      "contrasena_us": controllerPass.text,
     });
 
     var datauser = json.decode(response.body);
-
+    // String pb_001 = "pas_t";
+    //if (pb_001 == 0) {
     if (datauser.length == 0) {
       setState(() {
         mensaje = "usuario o contraseña incorrecta";
@@ -155,7 +156,7 @@ class _LoginPageState extends State<LoginPage> {
                           borderRadius: new BorderRadius.circular(30.0)),
                       onPressed: () {
                         login();
-                        Navigator.pop(context);
+                        //Navigator.pop(context);
                       },
                     ),
                     Text(
